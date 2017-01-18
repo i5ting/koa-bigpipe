@@ -8,6 +8,12 @@ a simple bigpipe impl with koa 2.x
 npm i -S koa-bigpipe
 ```
 
+## Usages
+
+```js
+app.use(require('koa-bigpipe'))
+```
+
 ## API
 
 - ctx.write(chunk)
