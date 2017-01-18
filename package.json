@@ -1,6 +1,6 @@
 {
   "name": "koa-bigpipe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,9 +18,7 @@
     "url": "https://github.com/i5ting/koa-bigpipe/issues"
   },
   "homepage": "https://github.com/i5ting/koa-bigpipe#readme",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "koa": "^2.0.0-alpha.7"
   }
