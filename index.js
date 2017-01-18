@@ -1,27 +1,40 @@
+/*!
+ * koa-bigpipe for koa 2.x
+ * Copyright(c) 2017 i5ting
+ * MIT Licensed
+ */
+
 'use strict'
 
-const Readable = require('stream').Readable
+/**
+ * Module exports.
+ * @public
+ */
 
 module.exports = (ctx, next) => {
-  // const readableStream = new Readable()
-//   readableStream._read = () => { }
-//
-//   ctx.body = readableStream
   ctx.type = 'html';
-
   ctx.respond = true
   
   let req = ctx.req
   let res = ctx.res
-
+  
+  // write chunk to browser
   ctx.write = (chunk) => {
+    if (!chunk) {
+      ctx.end()
+    }
+
     res.write(chunk)
   }
   
-  ctx.end = () => {
+  // end response
+  ctx.end = (chunk) => {
+    if (chunk) {
+      ctx.write(chunk)
+    }
+
     res.end(null)
   }
   
   return next()
 }
-
