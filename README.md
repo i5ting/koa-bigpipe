@@ -31,6 +31,12 @@ write chunk to browser. if chunk == null or undefined, it will end.
 
 end response
 
+### ctx.chunks
+
+```
+let count = ctx.chunks.length
+```
+
 ## Examples
 
 ```js
