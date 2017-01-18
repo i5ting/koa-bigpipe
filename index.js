@@ -14,6 +14,7 @@
 module.exports = (ctx, next) => {
   ctx.type = 'html';
   ctx.respond = true
+  ctx.status= 200
   
   let req = ctx.req
   let res = ctx.res
