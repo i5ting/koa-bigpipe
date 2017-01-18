@@ -15,6 +15,7 @@ module.exports = (ctx, next) => {
   ctx.type = 'html';
   ctx.respond = true
   ctx.status= 200
+  ctx.chunks = []
   
   let req = ctx.req
   let res = ctx.res
@@ -24,6 +25,8 @@ module.exports = (ctx, next) => {
     if (!chunk) {
       ctx.end()
     }
+
+    ctx.chunks.push(chunk)
 
     res.write(chunk)
   }
