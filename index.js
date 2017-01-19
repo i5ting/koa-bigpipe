@@ -12,8 +12,8 @@
  */
 
 module.exports = (ctx, next) => {
-  ctx.type = 'html';
-  ctx.respond = true
+  ctx.type = 'html'
+  // ctx.respond = false
   ctx.status= 200
   ctx.chunks = []
 
