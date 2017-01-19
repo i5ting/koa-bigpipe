@@ -16,21 +16,21 @@ module.exports = (ctx, next) => {
   ctx.respond = true
   ctx.status= 200
   ctx.chunks = []
-  
+
   let req = ctx.req
   let res = ctx.res
-  
+
   // write chunk to browser
   ctx.write = (chunk) => {
     if (!chunk) {
-      ctx.end()
+      return ctx.end()
     }
 
     ctx.chunks.push(chunk)
 
     res.write(chunk)
   }
-  
+
   // end response
   ctx.end = (chunk) => {
     if (chunk) {
@@ -39,6 +39,6 @@ module.exports = (ctx, next) => {
 
     res.end(null)
   }
-  
+
   return next()
 }
